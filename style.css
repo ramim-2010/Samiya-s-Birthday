@@ -1,0 +1,498 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,
+        #ffe0ed, #f6c5e9, #e5c8ff, #ffd5e7);
+    color: #84365e;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 92%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.page {
+    display: none;
+    min-height: 85vh;
+    padding: 85px 10px 45px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: pageEnter 1s ease;
+}
+
+.page.active {
+    display: flex;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MUSIC BUTTON */
+
+.music-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 20;
+    padding: 12px 17px;
+    background: #d63384;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #d6338450;
+}
+
+/* YOUTUBE PLAYER */
+
+#youtube-player-container {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* COMMON TEXT */
+
+.eyebrow {
+    color: #c13c7a;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(42px, 9vw, 72px);
+    color: #d63384;
+    text-shadow: 2px 3px 15px white;
+}
+
+h2 {
+    font-size: clamp(30px, 7vw, 43px);
+    color: #d63384;
+    margin-bottom: 22px;
+}
+
+h3 {
+    color: #c2185b;
+}
+
+.subtitle {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 18px auto;
+}
+
+.hint {
+    margin: 15px 0;
+}
+
+/* GIFT */
+
+.welcome-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.gift {
+    font-size: 115px;
+    margin: 25px;
+    animation: giftBounce 2s infinite;
+}
+
+@keyframes giftBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-17px) rotate(5deg);
+    }
+}
+
+.gift.opened {
+    animation: giftOpen 1s forwards;
+}
+
+@keyframes giftOpen {
+    to {
+        transform: scale(1.8) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* BUTTONS */
+
+.primary-btn {
+    border: none;
+    border-radius: 40px;
+    padding: 15px 30px;
+    margin-top: 25px;
+    background: linear-gradient(45deg, #e91e63, #b83280);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 25px #e91e6350;
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 12px 30px #e91e6370;
+}
+
+/* BIRTHDAY */
+
+.big-emoji {
+    font-size: 95px;
+    animation: bounce 2s infinite;
+}
+
+.name {
+    font-family: cursive;
+}
+
+.decor {
+    font-size: 30px;
+    margin-top: 25px;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* LETTER */
+
+.letter-card {
+    width: 100%;
+    max-width: 650px;
+    background: #ffffffd9;
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 35px 30px;
+    box-shadow: 0 15px 40px #c2185b25;
+    animation: glow 3s infinite alternate;
+}
+
+.letter-flower {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.letter-card h2 {
+    font-family: cursive;
+}
+
+.letter-card p {
+    line-height: 1.9;
+    margin: 17px 0;
+    font-size: 15px;
+}
+
+.last-message {
+    color: #d63384;
+    font-weight: bold;
+    font-size: 18px !important;
+}
+
+.signature {
+    font-family: cursive;
+    font-size: 20px;
+    color: #c2185b;
+    margin-top: 25px;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 10px 30px #d6338420;
+    }
+    to {
+        box-shadow: 0 15px 45px #d6338460;
+    }
+}
+
+/* CAKE */
+
+.cake {
+    font-size: 125px;
+    margin: 25px;
+    animation: cakeDance 2s infinite;
+}
+
+@keyframes cakeDance {
+    50% {
+        transform: scale(1.12) rotate(4deg);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.photo-card {
+    padding: 10px;
+    background: #ffffffdf;
+    border-radius: 20px;
+    border: 2px solid white;
+    box-shadow: 0 8px 25px #d6338430;
+    transition: 0.4s;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.photo-card p {
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 12px;
+    color: #c2185b;
+}
+
+/* IMAGE VIEWER */
+
+.image-viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: #170814ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-viewer img {
+    max-width: 90%;
+    max-height: 85vh;
+    border: 5px solid white;
+    border-radius: 18px;
+    object-fit: contain;
+}
+
+.close-image {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 40px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* FINAL */
+
+.final-heart {
+    font-size: 90px;
+    animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+.final-message {
+    max-width: 530px;
+    font-size: 19px;
+    line-height: 1.9;
+    margin: 20px auto;
+}
+
+.flowers {
+    font-size: 35px;
+    margin-top: 30px;
+}
+
+.ending {
+    color: #c2185b;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.8;
+    margin-top: 30px;
+    animation: pageEnter 1s ease;
+}
+
+.ending strong {
+    font-family: cursive;
+    font-size: 32px;
+    color: #d63384;
+}
+
+.ending small {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+/* DESIGNER CREDIT */
+
+.designer-credit {
+    margin-top: 15px;
+    font-size: 11px;
+    color: #ad3972;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.designer-credit span {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.designer-credit h3 {
+    font-family: cursive;
+    font-size: 30px;
+    color: #d63384;
+}
+
+.designer-credit small {
+    font-size: 11px;
+}
+
+/* FLOATING HEARTS */
+
+#hearts span {
+    position: fixed;
+    bottom: -50px;
+    z-index: 1;
+    pointer-events: none;
+    animation: floatUp linear infinite;
+    opacity: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* CONFETTI */
+
+.confetti-piece {
+    position: fixed;
+    top: -30px;
+    z-index: 150;
+    pointer-events: none;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px 10px;
+    color: #ad3972;
+    border-top: 1px solid #ffffff80;
+    font-weight: bold;
+    line-height: 2;
+}
+
+footer small {
+    font-weight: normal;
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+
+    .page {
+        padding-top: 90px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        max-width: 340px;
+    }
+
+    .photo-card img {
+        height: 280px;
+    }
+
+    .letter-card {
+        padding: 25px 18px;
+    }
+
+    .letter-card p {
+        font-size: 14px;
+    }
+
+    .music-btn {
+        font-size: 11px;
+        padding: 10px 13px;
+    }
+
+    .final-message {
+        font-size: 16px;
+    }
+
+    .cake {
+        font-size: 100px;
+    }
+}

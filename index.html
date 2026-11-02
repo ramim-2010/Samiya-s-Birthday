@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7b8d4">
+    <title>Happy Birthday Samiya ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="hearts"></div>
+
+    <!-- YOUTUBE MUSIC -->
+    <div id="youtube-player-container">
+        <div id="youtube-player"></div>
+    </div>
+
+    <button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+        🎵 Play Music
+    </button>
+
+    <main class="container">
+
+        <!-- PAGE 1: WELCOME -->
+
+        <section class="page active" id="page1">
+
+            <div class="eyebrow">
+                ✨ A SPECIAL DAY FOR SOMEONE SPECIAL ✨
+            </div>
+
+            <div class="welcome-icon">💝</div>
+
+            <h1>Hey, Samiya!</h1>
+
+            <p class="subtitle">
+                Someone has prepared a little surprise for you...
+            </p>
+
+            <div class="gift" id="gift">🎁</div>
+
+            <p class="hint">
+                A little gift is waiting for you!
+            </p>
+
+            <button class="primary-btn" onclick="openGift()">
+                Open Your Gift 💗
+            </button>
+
+        </section>
+
+
+        <!-- PAGE 2: BIRTHDAY SURPRISE -->
+
+        <section class="page" id="page2">
+
+            <div class="eyebrow">
+                🎉 TODAY IS YOUR DAY 🎉
+            </div>
+
+            <div class="big-emoji">🎂</div>
+
+            <h2>Happy Birthday!</h2>
+
+            <h1 class="name">Samiya ❤️</h1>
+
+            <p class="subtitle">
+                Wishing you a day filled with happiness,
+                love and beautiful memories.
+            </p>
+
+            <div class="decor">
+                🌸 ✨ 💖 ✨ 🌸
+            </div>
+
+            <button class="primary-btn" onclick="nextPage(3)">
+                Read Your Letter 💌
+            </button>
+
+        </section>
+
+
+        <!-- PAGE 3: BIRTHDAY LETTER -->
+
+        <section class="page" id="page3">
+
+            <div class="eyebrow">
+                💌 A LITTLE MESSAGE FOR YOU
+            </div>
+
+            <div class="letter-card">
+
+                <div class="letter-flower">🌷</div>
+
+                <h2>Dear Samiya,</h2>
+
+                <p>Happy Birthday! 🎂❤️</p>
+
+                <p>
+                    May every day of your life be as beautiful
+                    and full of happiness as today. May all your
+                    little and big dreams come true. ✨
+                </p>
+
+                <p>
+                    You know, sometimes you meet someone and,
+                    even in a short time, they start to feel special.
+                    Maybe you're one of those people. 😊
+                </p>
+
+                <p>
+                    I hope your day is as beautiful as you are.
+                    And may that sweet smile of yours always
+                    stay the same. ❤️
+                </p>
+
+                <p class="last-message">
+                    Have a beautiful birthday, beautiful! 🌸
+                </p>
+
+                <div class="signature">
+                    With warm wishes ❤️
+                </div>
+
+            </div>
+
+            <button class="primary-btn" onclick="nextPage(4)">
+                Next Surprise 🎂
+            </button>
+
+        </section>
+
+
+        <!-- PAGE 4: BIRTHDAY CAKE -->
+
+        <section class="page" id="page4">
+
+            <div class="eyebrow">
+                🎂 MAKE A WISH 🎂
+            </div>
+
+            <h2>Your Birthday Cake</h2>
+
+            <div class="cake" id="cake">🎂</div>
+
+            <p id="cakeText">
+                Close your eyes and make a beautiful wish!
+            </p>
+
+            <button class="primary-btn" id="blowBtn"
+                onclick="blowCandles()">
+                Blow the Candles 🕯️
+            </button>
+
+            <button class="primary-btn hidden" id="cakeNext"
+                onclick="nextPage(5)">
+                See Your Memories 🌸
+            </button>
+
+        </section>
+
+
+        <!-- PAGE 5: PHOTO GALLERY -->
+
+        <section class="page" id="page5">
+
+            <div class="eyebrow">
+                📸 BEAUTIFUL MEMORIES✨
+            </div>
+
+            <h2>Some Lovely Moments</h2>
+
+            <p class="subtitle">
+                A little gallery to make your day brighter.
+            </p>
+
+            <div class="gallery">
+
+                <div class="photo-card">
+
+                    <img
+                        src="https://i.postimg.cc/WpBp3V6f/Gemini-Generated-Image-tmc0agtmc0agtmc0.jpg"
+                        alt="Beautiful memory 1"
+                        onclick="showImage(this)">
+
+                    <p>BIRTHDAY BLISS✨ 🌸</p>
+
+                </div>
+
+                <div class="photo-card">
+
+                    <img
+                        src="https://i.postimg.cc/9fg2GYd2/Rose.png"
+                        alt="Beautiful Rose"
+                        onclick="showImage(this)">
+
+                    <p>A Little Flower for You 🌹</p>
+
+                </div>
+
+                <div class="photo-card">
+
+                    <img
+                        src="https://i.postimg.cc/4yzDyDXx/images.jpg"
+                        alt="Beautiful memory 3"
+                        onclick="showImage(this)">
+
+                    <p>Stay Beautiful ❤️</p>
+
+                </div>
+
+            </div>
+
+            <button class="primary-btn" onclick="nextPage(6)">
+                One Last Surprise 💖
+            </button>
+
+        </section>
+
+
+        <!-- FULL SCREEN IMAGE VIEWER -->
+
+        <div class="image-viewer hidden" id="imageViewer" onclick="closeImage()">
+
+            <button class="close-image" aria-label="Close">
+                ×
+            </button>
+
+            <img id="largeImage" src="" alt="Enlarged photo">
+
+        </div>
+
+
+        <!-- PAGE 6: FINAL SURPRISE -->
+
+        <section class="page" id="page6">
+
+            <div class="final-heart" id="finalHeart">
+                💗
+            </div>
+
+            <div class="eyebrow">
+                ONE LAST THING...
+            </div>
+
+            <h2>Dear Samiya,</h2>
+
+            <p class="final-message">
+                Some people make ordinary days feel a little
+                more special just by being themselves.
+            </p>
+
+            <h3>
+                And you are one of them! ❤️
+            </h3>
+
+            <div class="flowers">
+                🌸 🌷 💐 🌷 🌸
+            </div>
+
+            <button class="primary-btn"
+                onclick="celebrate()">
+                Click for a Final Surprise ✨
+            </button>
+
+            <p class="ending hidden" id="ending">
+
+                Stay Happy, Stay Beautiful, Samiya! ❤️
+
+                <br><br>
+
+                Have the most wonderful birthday! 🎂
+
+                <br><br>
+
+                <span>With Love & Best Wishes</span>
+
+                <br>
+
+                <strong>Ramim.</strong>
+
+                <br><br>
+
+
+            </p>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>Happy Birthday Samiya ❤️</p>
+
+            <div class="designer-credit">
+                <small>Designed by Ramim ❤️</small>
+            </div>
+
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
